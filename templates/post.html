@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  <h1> Agrega una Pregunta </h1>
+{% endblock %}
+{% block contenido %}
+    <form id="form">
+      <input type="text" id="pregunta" name="pregunta" /><br>
+      <input type="button" id="send-signup" value="Ingresar" onclick="envioPregunta()" /><br>
+    </form>
+
+  <script src="./static/script/front.js"></script>
+{% endblock %}

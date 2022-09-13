@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block titulo %}
+<h1> Modifica la respuesta correcta </h1>{% endblock %}
+{% block contenido %}
+<form id="form">
+    <select name="listaPregunta" id="listaPregunta" required>
+    <option selected disabled >Seleccione una pregunta</option>
+      {% for i in preguntas %}
+        {% if i.pregunta != '' %}
+        <option value={{ i.id_pregunta }}> {{ i.pregunta }} </option> 
+      {% endif %}
+      {% endfor %}
+    </select>
+  <br>
+      <label>Inserte la respuesta correcta</label>
+  <br>
+      <input type="text" id="respCorrecta" name="respCorrecta" /><br>
+    
+      <input type="button" id="send-signup" value="Ingresar" onclick="modificarPregunta()" /><br>
+    </form>
+{% endblock %}

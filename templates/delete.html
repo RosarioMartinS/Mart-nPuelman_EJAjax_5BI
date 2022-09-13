@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Borrar</title>
+{% endblock %}
+
+{% block titulo %}
+    <h1> Elimina una pregunta </h1>
+{% endblock %}
+{% block contenido %}
+<form id="form">
+    <select name="listaPregunta" id="listaPregunta">
+    <option selected disabled>Seleccione una pregunta</option>
+      {% for i in preguntas %}
+        {% if i.pregunta != '' %}
+        <option value={{ i.id_pregunta }} > {{ i.pregunta }} </option>
+      {% endif %}
+      {% endfor %}
+    </select>
+      <input type="button" id="send-signup" value="Ingresar" onclick="eliminarPregunta()" /><br>
+    </form>
+{% endblock %}
